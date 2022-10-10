@@ -14,7 +14,8 @@
 
 Pada proyek ini akan dibahas mengenai permasalahan dalam bidang keuangan, investasi, *arts and entertainment* untuk mengetahui prediksi harga *gemstone* atau batu permata berdasarkan data fitur-fitur yang terdapat pada batu permata tersebut, seperti nilai *carat*, *cut*, *color*, *clarity*, *depth*, *table*, dan ukuran batu permata tersebut. Data batu permata ini dikumpulkan lebih dari 27.000 baris data batu permata *cubic zirconia* atau batu zirkonia.
 
-![cubic-zirconia](https://user-images.githubusercontent.com/77439245/194769780-4580109c-c83a-4045-9a84-5bae9e8d9aaa.jpg)
+![cubic-zirconia](https://user-images.githubusercontent.com/77439245/194769780-4580109c-c83a-4045-9a84-5bae9e8d9aaa.jpg)  
+**Gambar 1. Ilustrasi Batu Permata (*Gemstone*) Cubic Zirconia**
 
 Investasi merupakan sebuah hal yang penting untuk menjadi jaminan di masa depan. Bagi orang yang sudah *familiar* dengan investasi, pasti sudah tidak asing dengan produk-produk investasi yang dapat dilakukan, mulai dari investasi berupa surat-surat berharga, aset fisik baik yang bergerak maupun tidak bergerak, contohnya seperti properti, tanah, perhiasan, dan sebagainya.
 
@@ -58,7 +59,8 @@ Berdasarkan rumusan masalah dan tujuan di atas, maka disimpulkan beberapa solusi
      - Hitung jarak dari data baru ke masing-masing *data point* di dataset.
      - Ambil sejumlah k data dengan jarak terdekat, lalu tentukan kelas dari data baru tersebut.
      
-     ![knn](https://user-images.githubusercontent.com/77439245/194770422-d01f1540-1baf-49fd-9bef-8de6708bf445.png)
+     ![knn](https://user-images.githubusercontent.com/77439245/194770422-d01f1540-1baf-49fd-9bef-8de6708bf445.png)  
+     **Gambar 2. Ilustrasi algoritma K-Nearest Neighbor**
      
      Berdasarkan gambar di atas, terdapat sejumlah *data point* yang dibagi menjadi dua kelas, yaitu kelas A (biru) dan kelas B (kuning). Misalkan ada data baru (hitam) yang akan diprediksi kelasnya menggunakan algoritma K-Nearest Neighbor (KNN). Nilai k yang digunakan adalah 3. Setelah perhitungan jarak antar titik hitam ke masing-masing *data point* lainnya, diperoleh 3 titik terdekat yang terdiri dari 2 titik kuning (kelas B) dan 1 titik biru (kelas A) di dalam kotak merah. Sehingga kelas untuk data baru (titik hitam) tersebut masuk ke dalam kelas B (kuning).
      
@@ -76,7 +78,8 @@ Berdasarkan rumusan masalah dan tujuan di atas, maka disimpulkan beberapa solusi
    
      Algoritma Random Forest merupakan algoritma *machine learning* yang menggabungkan *output* atau keluarannya dari beberapa *decision tree* untuk mencapai suatu hasil. Algoritma ini dibentuk dari banyak *tree* atau pohon yang diperoleh melalui proses *bagging* atau *bootstrap aggregating*, di mana akan terdapat beberapa model yang dilatih dengan cara *random sampling with replacement*. [[4]](https://www.trivusi.web.id/2022/08/algoritma-random-forest.html) Prediksi masing-masing *tree* nantinya akan digabungkan sehingga diperoleh akurasi yang lebih tinggi dan juga mencegah masalah overfitting.
      
-     ![random-forest](https://user-images.githubusercontent.com/77439245/194770071-8d4e710a-718b-46cd-a196-59df6757ec74.jpg)
+     ![random-forest](https://user-images.githubusercontent.com/77439245/194770071-8d4e710a-718b-46cd-a196-59df6757ec74.jpg)  
+     **Gambar 3. Ilustrasi algoritma Random Forest**
      
      Cara kerja algoritma Random Forest, yaitu: [[4]](https://www.trivusi.web.id/2022/08/algoritma-random-forest.html)
      - Algoritma memilih sampel acak dari dataset yang disediakan.
@@ -88,13 +91,15 @@ Berdasarkan rumusan masalah dan tujuan di atas, maka disimpulkan beberapa solusi
    
      Algoritma Boosting yang digunakan dalam proyek ini adalah algoritma Adaptive Boosting atau biasa disingkat dengan AdaBoost, merupakan algoritma *ensemble* yang memanfaatkan *bagging* dan *boosting* untuk mengembangkan peningkatan akurasi prediksi model *machine learning* yang dibangun. [[5]](https://www.dqlab.id/algoritma-machine-learning-yang-perlu-dipelajari)
      
-     ![boosting](https://user-images.githubusercontent.com/77439245/194770091-1f3d0d34-c068-4a95-9cf8-65c5ce999399.jpg)
+     ![boosting](https://user-images.githubusercontent.com/77439245/194770091-1f3d0d34-c068-4a95-9cf8-65c5ce999399.jpg)  
+     **Gambar 4. Ilustrasi Boosting Algorithm**
      
      Algoritma ini menggunakan beberapa pohon keputusan untuk mendapatkan data prediksi secara berurutan dan prosesnya iteratif. Data latih akan diberikan bobot yang sama untuk kemudian dilakukan pemeriksaan, dan bobot yang lebih tinggi akan masuk ke model yang salah sehingga akan lanjut ke tahap selanjutnya secara berulang hingga tingkat akurasi yang diinginkan.
 
 ## Data Understanding
 
-![gemstone-dataset](https://user-images.githubusercontent.com/77439245/194770177-88b4044c-1911-48fb-919e-e29f4044c12b.png)
+![gemstone-dataset](https://user-images.githubusercontent.com/77439245/194770177-88b4044c-1911-48fb-919e-e29f4044c12b.png)  
+**Gambar 5. Kaggle Dataset Gemstone Price Prediction**
 
 Dataset yang digunakan dalam proyek ini adalah dataset [Gemstone Price Prediction](https://www.kaggle.com/datasets/colearninglounge/gemstone-price-prediction?select=cubic_zirconia.csv) yang diambil dari platform Kaggle. *File* yang digunakan berupa *file* csv, yaitu `cubic_zirconia.csv`.
 
@@ -108,6 +113,7 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
    
    Berikut adalah informasi variabel dari dataset Gemstone Price Prediction:
    
+   **Tabel 1. Deskripsi variabel**
    | # | Column  | Non-Null Count | Dtype   |
    |---|---------|----------------|---------|
    | 0 | carat   | 26967 non-null | float64 |
@@ -127,6 +133,7 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
 
    Tahap ini dilakukan untuk mengecek deskripsi statistik data dengan fitur describe().
    
+   **Tabel 2. Deskripsi statistik**
    |       | carat        | depth        | table        | x            | y            | z            | price        |
    |-------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
    | count | 26967.000000 | 26270.000000 | 26967.000000 | 26967.000000 | 26967.000000 | 26967.000000 | 26967.000000 |
@@ -154,6 +161,7 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
    
    Setelah dilakukan pembersihan, dilakukan pengecekan ulang dataset menggunakan fungsi describe().
    
+   **Tabel 3. Pengecekan ulang *missing value***
    |       | carat | cut     | color | clarity | depth | table | x    | y    | z   | price |
    |-------|-------|---------|-------|---------|-------|-------|------|------|-----|-------|
    | 5821  | 0.71  | Good    | F     | SI2     | 64.1	 | 60.0  | 0.00 | 0.00 | 0.0 | 2130  |
@@ -172,7 +180,8 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
 
    Outliers merupakan sampel yang nilainya sangat jauh dari cakupan umum data utama dan hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari data hasil pengamatan lainnya.
    
-   ![outliers-1](https://user-images.githubusercontent.com/77439245/194770492-e098a150-5852-4c94-9328-ccc7d68af635.jpg)
+   ![outliers-1](https://user-images.githubusercontent.com/77439245/194770492-e098a150-5852-4c94-9328-ccc7d68af635.jpg)  
+   **Gambar 6. Grafik boxplot sebelum pembersihan *outliers***
    
    Berdasarkan *output* diagram di atas terlihat bahwa ada *outliers* pada fitur carat, depth, table, price, x, y, dan z. Selanjutnya dilakukan pembersihan *outliers* dengan metode IQR (*Inter Quartile Range*).
    
@@ -180,7 +189,8 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
    
    Lalu membuat batas bawah dengan mengurangi Q1 dengan 1.5 IQR dan batas atas menambah 1.5 IQR dengan Q3.
    
-   ![outliers-2](https://user-images.githubusercontent.com/77439245/194770493-5f1cc877-3eb6-4d3c-aee0-caaa8c9b7e0c.jpg)
+   ![outliers-2](https://user-images.githubusercontent.com/77439245/194770493-5f1cc877-3eb6-4d3c-aee0-caaa8c9b7e0c.jpg)  
+   **Gambar 7. Grafik boxplot setelah pembersihan *outliers***
    
    Berdasarkan output diagram di atas, terlihat bahwa outliers telah dibersihkan meskipun masih ada sedikit outliers pada fitur carat, depth dan price, tetapi masih dapat ditoleransi.
    
@@ -190,7 +200,8 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
    
    - Categorical Features
      
-     ![univariate-categorical](https://user-images.githubusercontent.com/77439245/194770681-5bcbf7d6-0873-4721-916e-880890746dc6.png)
+     ![univariate-categorical](https://user-images.githubusercontent.com/77439245/194770681-5bcbf7d6-0873-4721-916e-880890746dc6.png)  
+     **Gambar 8. Grafik univariat distribusi fitur kategorikal, yaitu cut, color, dan clarity**
      
      Pada fitur cut, terdapat 5 kategori, yaitu Ideal, Premium, Very Good, Good, dan Fair dengan persentase tertinggi terdapat pada kategori Ideal sebesar 42.9%.
      
@@ -200,7 +211,8 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
      
    - Numerical Features
      
-     ![univariate-numerical](https://user-images.githubusercontent.com/77439245/194770710-eb1d25aa-7207-459d-ac81-5dffd3e4d44d.jpg)
+     ![univariate-numerical](https://user-images.githubusercontent.com/77439245/194770710-eb1d25aa-7207-459d-ac81-5dffd3e4d44d.jpg)  
+     **Gambar 9. Grafik univariat distribusi fitur numerikal, yaitu carat, depth, table, x, y, z, dan price**
      
      Berdasarkan grafik histogram di atas, dapat disimpulkan sebagai berikut:
      - Pada fitur carat menunjukkan histogram *right-skewed*.
@@ -216,7 +228,8 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
    - Categorical Features
      Melakukan pengecekan rata-rata harga terhadap masing-masing fitur kategori, yaitu cut, color, dan clarity untuk mengetahui pengaruh fitur tersebut terhadap harga.
      
-     ![multivariate-categorical](https://user-images.githubusercontent.com/77439245/194770804-45d31560-5231-414d-9f03-106fbdd00e23.jpg)
+     ![multivariate-categorical](https://user-images.githubusercontent.com/77439245/194770804-45d31560-5231-414d-9f03-106fbdd00e23.jpg)  
+     **Gambar 10. Grafik multivariat fitur kategorikal, yaitu cut, color, dan clarity terhadap price**
      
      Berdasarkan histogram di atas, dapat disimpulkan:
      - Rata-rata fitur price terhadap fitur cut cenderung sama dengan rentang harga sekitar 2700 sampai 4000. Pada fitur cut, grade terendah yaitu Fair justru memiliki harga rata-rata paling tinggi sehingga fitur cut tidak terlalu berpengaruh terhadap rata-rata harga.
@@ -227,7 +240,8 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
    - Numerical Features
      Melakukan pengecekan rata-rata harga terhadap masing-masing fitur numerik, yaitu carat, depth, table, x, y, dan z untuk mengetahui pengaruh fitur tersebut terhadap harga.
      
-     ![multivariate-numerical](https://user-images.githubusercontent.com/77439245/194770821-5c9f1ae4-3397-4db1-b17e-d2ce020c8243.jpg)
+     ![multivariate-numerical](https://user-images.githubusercontent.com/77439245/194770821-5c9f1ae4-3397-4db1-b17e-d2ce020c8243.jpg)  
+     **Gambar 11. Grafik multivariat fitur antar fitur numerik**
      
      Berdasarkan grafik atau diagram di atas, diperoleh kesimpulan sebagai berikut:
      - Pada fitur price terhadap carat, x, y dan z dapat dilihat memiliki pola sebaran data dengan korelasi positif.
@@ -237,9 +251,10 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
 
    Pengecekan korelasi atau hubungan antar fitur numerik menggunakan *heatmap correlation matrix*.
    
-   ![correlation-matrix](https://user-images.githubusercontent.com/77439245/194770861-db1ecf84-7f9c-4db1-aaad-60962690a24b.jpg)
+   ![correlation-matrix](https://user-images.githubusercontent.com/77439245/194770861-db1ecf84-7f9c-4db1-aaad-60962690a24b.jpg)  
+   **Gambar 12. Diagram *heatmap* *Correlation Matrix* fitur numerik**
    
-   Berdasarkan diagram heatmap di atas, disimpulkan bahwa:
+   Berdasarkan diagram *heatmap* di atas, disimpulkan bahwa:
    - Rentang nilai dari 1 sampai -0.2.
    - Jika nilai mendekati 1, maka korelasi antar fitur numerik semakin kuat positif.
    - Jika nilai mendekati 0, maka korelasinya semakin rendah atau semakin tidak ada korelasi.
@@ -251,6 +266,7 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
 
    Penghapusan fitur atau kolom dataset yaitu fitur depth dan table karena fitur tersebut memiliki korelasi yang rendah terhadap fitur price.
    
+   **Tabel 4. Pengecekan ulang dataset setelah menghapus fitur dengan korelasi rendah**
    |   | carat | cut       | color | clarity | x    | y    | z    | price |
    |---|-------|-----------|-------|---------|------|------|------|-------|
    | 0 | 0.30  | Ideal     | E     | SI1     | 4.27 | 4.29 | 2.66 | 499   |
@@ -267,6 +283,7 @@ Pada tahap persiapan data atau *data preparation* dilakukan beberapa proses, yai
 
    Proses *encoding* fitur kategori yaitu cut, color, dan clarity dengan teknik *one-hot-encoding*, sehingga diperoleh fitur baru yang mewakili masing-masing variabel kategori.
    
+   **Tabel 5. *Encoding* fitur kategori**
    |   | carat | x    | y    | z    | price | cut_Fair | cut_Good | cut_Ideal | cut_Premium | cut_Very Good | ... | color_I | color_J | clarity_I1 | clarity_IF | clarity_SI1 | clarity_SI2 | clarity_VS1 | clarity_VS2 | clarity_VVS1 | clarity_VVS2 |
    |---|-------|------|------|------|-------|---|---|---|---|---|-----|---|---|---|---|---|---|---|---|---|---|
    | 0 | 0.30  | 4.27 | 4.29 | 2.66 | 499   | 0 | 0 | 1 | 0 | 0 | ... | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
@@ -279,22 +296,21 @@ Pada tahap persiapan data atau *data preparation* dilakukan beberapa proses, yai
 
    Proses persiapan data atau *data preparation* dengan teknik reduksi dimensi atau *dimension reduction* merupakan teknik mengurangi jumlah fitur dengan tetap mempertahankan informasi pada data. Teknik pengurangan dimensi yang digunakan dalam kasus ini adalah Principal Component Analysis (PCA) untuk mereduksi dimensi, mengekstraksi fitur, dan mentransformasi data dari "n-dimensional space" ke dalam sistem berkoordinat baru dengan dimensi m, di mana m lebih kecil dari n.
    
-   ![reduksi-dimensi](https://user-images.githubusercontent.com/77439245/194770934-17e5073b-71e1-475a-a459-9387d6df1486.jpg)
+   ![reduksi-dimensi](https://user-images.githubusercontent.com/77439245/194770934-17e5073b-71e1-475a-a459-9387d6df1486.jpg)  
+   **Gambar 13. Grafik fitur ukuran batu permata, x, y, dan z**
     
    Hasil proporsi informasi dari fitur x, y, dan z dengan menggunakan Principal Component Analysis (PCA), yaitu
-   
-   ![proporsi-reduksi](https://user-images.githubusercontent.com/77439245/194770977-2291dbea-1308-4300-9898-fe7120911f0a.png)
+   `array([0.998, 0.002, 0.001])`
    
 3. **Pembagian Dataset**
 
    Proses pembagian dataset menjadi data latih dan data uji dengan rasio perbandingan data latih dan data uji, yaitu 90 : 10. Total sampel dataset, data latih, dan data uji setelah membagi atau *split* dataset. Terdapat 23.806 total sampel data dalam dataset, sedangkan untuk total sampel data latih sebanyak 21.425 data dan total sampel data uji sebanyak 2.381 data.
    
-   ![split-dataset](https://user-images.githubusercontent.com/77439245/194771006-0bfe5434-dc6f-4c3a-a598-b3172647762c.png)
-   
 4. **Standarisasi**
 
    Proses standarisasi fitur numerik, yaitu carat dan dimension menggunakan StandardScaler sehingga fitur data menjadi bentuk yang lebih mudah diolah oleh model machine learning.
    
+   **Tabel 6. Standarisasi fitur numerik**
    |       | carat     | dimension |
    |-------|-----------|-----------|
    | 18677 | 0.827437  | 0.987784  |
@@ -354,13 +370,15 @@ $\hat{Y}_i$ = nilai prediksi
 
 Berdasarkan hasil evaluasi dengan metrik Mean Square Error (MSE) untuk masing-masing model algoritma machine learning terhadap data latih dan data uji, diperoleh nilai evaluasi sebagai berikut.
 
+**Tabel 7. Nilai evaluasi model *machine learning***
 |          | train      | test       |
 |----------|------------|------------|
 | KNN      | 202.514631 | 261.056355 |
 | RF       | 108.567674 | 191.358713 |
 | Boosting | 924.027159 | 918.473432 |
 
-![evaluation-graph](https://user-images.githubusercontent.com/77439245/194771116-39e81269-f2ab-4cce-814f-fd5c37f850bc.jpg)
+![evaluation-graph](https://user-images.githubusercontent.com/77439245/194771116-39e81269-f2ab-4cce-814f-fd5c37f850bc.jpg)  
+**Gambar 14. Grafik evaluasi model *machine learning***
 
 Berdasarkan grafik di atas, dapat disimpulkan yaitu:
 - Model dengan algoritma Random Forest memberikan nilai *error* yang paling kecil yaitu *train* sebesar 108.567674 dan *test* sebesar 191.358713.
@@ -369,6 +387,7 @@ Berdasarkan grafik di atas, dapat disimpulkan yaitu:
 
 Kemudian dilakukan pengujian prediksi model menggunakan data uji.
 
+**Tabel 8. Hasil pengujian prediksi model**
 |      | y_true | prediksi_KNN | prediksi_RF | prediksi_Boosting |
 |------|--------|--------------|-------------|-------------------|
 | 8697 | 706    | 792.1        | 715.7       | 787.4             |
