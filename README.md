@@ -108,7 +108,18 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
    
    Berikut adalah informasi variabel dari dataset Gemstone Price Prediction:
    
-   ![variabel](https://user-images.githubusercontent.com/77439245/194770314-64f0100e-e4cf-41df-81b9-fcce8ee81067.png)
+   | # | Column  | Non-Null Count | Dtype   |
+   |---|---------|----------------|---------|
+   | 0 | carat   | 26967 non-null | float64 |
+   | 1 | cut     | 26967 non-null | object  |
+   | 2 | color   | 26967 non-null | object  |
+   | 3 | clarity | 26967 non-null | object  |
+   | 4 | depth   | 26967 non-null | float64 |
+   | 5 | table   | 26967 non-null | float64 |
+   | 6 | x       | 26967 non-null | float64 |
+   | 7 | y       | 26967 non-null | float64 |
+   | 8 | z       | 26967 non-null | float64 |
+   | 9 | price   | 26967 non-null | object  |
    
    Berdasarkan *output* di atas, terdapat 6 kolom dengan tipe data float64, 3 kolom dengan tipe data objek, dan 1 kolom dengan tipe data int64.
    
@@ -116,7 +127,16 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
 
    Tahap ini dilakukan untuk mengecek deskripsi statistik data dengan fitur describe().
    
-   ![statistik](https://user-images.githubusercontent.com/77439245/194770334-824b3e3e-c02d-466d-8bea-03d1ac35e88f.png)
+   |       | carat        | depth        | table        | x            | y            | z            | price        |
+   |-------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+   | count | 26967.000000 | 26270.000000 | 26967.000000 | 26967.000000 | 26967.000000 | 26967.000000 | 26967.000000 |
+   | mean  | 0.798375     | 61.745147    | 57.456080    | 5.729854     | 5.733569     | 3.538057     | 3939.518115  |
+   | std   | 0.477745     | 1.412860     | 2.232068     | 1.128516     | 1.166058     | 0.720624     | 4024.864666  |
+   | min   | 0.200000     | 50.800000    | 49.000000    | 0.000000     | 0.000000     | 0.000000     | 326.000000   |
+   | 25%   | 0.400000     | 61.000000    | 56.000000    | 4.710000     | 4.710000     | 2.900000     | 945.000000   |
+   | 50%   | 0.700000     | 61.800000    | 57.000000    | 5.690000     | 5.710000     | 3.520000     | 2375.000000  | 
+   | 75%   | 1.050000     | 62.500000    | 59.000000    | 6.550000     | 6.540000     | 4.040000     | 5360.000000  |
+   | max   | 4.500000     | 73.600000    | 79.000000    | 10.230000    | 58.900000    | 31.800000    | 18818.000000 |
    
    Berdasarkan output di atas, didapatkan deskripsi statistik yaitu:
    - count : Jumlah sampel data
@@ -134,7 +154,17 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
    
    Setelah dilakukan pembersihan, dilakukan pengecekan ulang dataset menggunakan fungsi describe().
    
-   ![missing-value](https://user-images.githubusercontent.com/77439245/194770467-e62e6791-e85e-4148-b80d-25f8f17d68e9.png)
+   |       | carat | cut     | color | clarity | depth | table | x    | y    | z   | price |
+   |-------|-------|---------|-------|---------|-------|-------|------|------|-----|-------|
+   | 5821  | 0.71  | Good    | F     | SI2     | 64.1	 | 60.0  | 0.00 | 0.00 | 0.0 | 2130  |
+   | 6034  | 2.02  | Premium | H     | VS2     | 62.7	 | 53.0  | 8.02 | 7.95 | 0.0 | 18207 |
+   | 6215  | 0.71  | Good    | F     | SI2     | 64.1	 | 60.0  | 0.00 | 0.00 | 0.0 | 2130  |
+   | 10827 | 2.20  | Premium | H     | SI1     | 61.2	 | 59.0  | 8.42 | 8.37 | 0.0 | 17265 |
+   | 12498 | 2.18  | Premium | H     | SI2     | 59.4	 | 61.0  | 8.49 | 8.45 | 0.0 | 12631 |
+   | 12689 | 1.10  | Premium | G     | SI2     | 63.0	 | 59.0  | 6.50 | 6.47 | 0.0 | 3696  |
+   | 17506 | 1.14  | Fair    | G     | VS1     | 57.5	 | 67.0  | 0.00 | 0.00 | 0.0 | 6381  |
+   | 18194 | 1.01  | Premium | H     | I1      | 58.1	 | 59.0  | 6.66 | 6.60 | 0.0 | 3167  |
+   | 23758 | 1.12  | Premium | G     | I1      | 60.4	 | 59.0  | 6.71 | 6.67 | 0.0 | 2383  |
    
    Berdasarkan *output* di atas, dapat dilihat bahwa sudah tidak terdapat lagi *missing value*. Nilai min (minimal) dari setiap fitur numerik sudah tidak 0 lagi.
    
@@ -221,7 +251,13 @@ Kemudian dilakukan proses *Exploratory Data Analysis* (EDA) yang merupakan prose
 
    Penghapusan fitur atau kolom dataset yaitu fitur depth dan table karena fitur tersebut memiliki korelasi yang rendah terhadap fitur price.
    
-   ![Screenshot 2022-10-10 at 00-27-21 Google Colaboratory](https://user-images.githubusercontent.com/77439245/194770865-f93c4c23-7d03-4f56-bf01-ed38d3574746.png)
+   |   | carat | cut       | color | clarity | x    | y    | z    | price |
+   |---|-------|-----------|-------|---------|------|------|------|-------|
+   | 0 | 0.30  | Ideal     | E     | SI1     | 4.27 | 4.29 | 2.66 | 499   |
+   | 1 | 0.33  | Premium   | G     | IF      | 4.42 | 4.46 | 2.70 | 984   |
+   | 2 | 0.90  | Very Good | E     | VVS2    | 6.04 | 6.12 | 3.78 | 6289  |
+   | 3 | 0.42  | Ideal     | F     | VS1     | 4.82 | 4.80 | 2.96 | 1082  |
+   | 4 | 0.31  | Ideal     | F     | VVS1    | 4.35 | 4.43 | 2.65 | 779   |
 
 ## Data Preparation
 
@@ -231,7 +267,13 @@ Pada tahap persiapan data atau *data preparation* dilakukan beberapa proses, yai
 
    Proses *encoding* fitur kategori yaitu cut, color, dan clarity dengan teknik *one-hot-encoding*, sehingga diperoleh fitur baru yang mewakili masing-masing variabel kategori.
    
-   ![encoding](https://user-images.githubusercontent.com/77439245/194770925-20b916cb-d836-43fd-9c5f-e6df04473267.png)
+   |   | carat | x    | y    | z    | price | cut_Fair | cut_Good | cut_Ideal | cut_Premium | cut_Very Good | ... | color_I | color_J | clarity_I1 | clarity_IF | clarity_SI1 | clarity_SI2 | clarity_VS1 | clarity_VS2 | clarity_VVS1 | clarity_VVS2 |
+   |---|-------|------|------|------|-------|---|---|---|---|---|-----|---|---|---|---|---|---|---|---|---|---|
+   | 0 | 0.30  | 4.27 | 4.29 | 2.66 | 499   | 0 | 0 | 1 | 0 | 0 | ... | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+   | 1 | 0.33  | 4.42 | 4.46 | 2.70 | 984   | 0 | 0 | 0 | 1 | 0 | ... | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+   | 2 | 0.90  | 6.04 | 6.12 | 3.78 | 6289  | 0 | 0 | 0 | 0 | 1 | ... | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+   | 3 | 0.42  | 4.82 | 4.80 | 2.96 | 1082  | 0 | 0 | 1 | 0 | 0 | ... | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
+   | 4 | 0.31  | 4.35 | 4.43 | 2.65 | 779   | 0 | 0 | 1 | 0 | 0 | ... | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
    
 2. **Reduksi Dimensi dengan PCA**
 
@@ -245,7 +287,7 @@ Pada tahap persiapan data atau *data preparation* dilakukan beberapa proses, yai
    
 3. **Pembagian Dataset**
 
-   Proses pembagian dataset menjadi data latih dan data uji dengan rasio perbandingan data latih dan data uji, yaitu 90 : 10. Total sampel dataset, data latih, dan data uji setelah membagi atau *split* dataset.
+   Proses pembagian dataset menjadi data latih dan data uji dengan rasio perbandingan data latih dan data uji, yaitu 90 : 10. Total sampel dataset, data latih, dan data uji setelah membagi atau *split* dataset. Terdapat 23.806 total sampel data dalam dataset, sedangkan untuk total sampel data latih sebanyak 21.425 data dan total sampel data uji sebanyak 2.381 data.
    
    ![split-dataset](https://user-images.githubusercontent.com/77439245/194771006-0bfe5434-dc6f-4c3a-a598-b3172647762c.png)
    
@@ -253,7 +295,13 @@ Pada tahap persiapan data atau *data preparation* dilakukan beberapa proses, yai
 
    Proses standarisasi fitur numerik, yaitu carat dan dimension menggunakan StandardScaler sehingga fitur data menjadi bentuk yang lebih mudah diolah oleh model machine learning.
    
-   ![standarisasi](https://user-images.githubusercontent.com/77439245/194771043-8e44db77-4ee8-456b-ac7a-c7b365d803b3.png)
+   |       | carat     | dimension |
+   |-------|-----------|-----------|
+   | 18677 | 0.827437  | 0.987784  |
+   | 17512 | 2.106236  | 1.748637  |
+   | 20365 | -0.504646 | -0.343164 |
+   | 21010 | 1.333628  | 1.299652  |
+   | 18132 | 2.106236  | 1.765440  |
 
 ## Modeling
 
@@ -261,14 +309,9 @@ Pada tahap modeling, dilakukan pemilihan algoritma yang akan digunakan dalam mem
 
 Sebelum melakukan pengembangan model, dilakukan persiapan *dataframe* untuk menganalisis model dengan algoritma K-Nearest Neighbor (KNN), Random Forest, dan Boosting Algorithm.
 
-```python
-models = pd.DataFrame(index = ['train_mse', 'test_mse'],
-                      columns = ['KNN', 'RandomForest', 'Boosting'])
-```
-
 1. **Algoritma K-Nearest Neighbor (KNN)**
 
-   Algoritma KNN menggunakan ‘kesamaan fitur’ untuk memprediksi nilai dari setiap data yang baru. KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat (dengan k adalah sebuah angka positif).
+   Algoritma KNN menggunakan ‘kesamaan fitur’ untuk memprediksi nilai dari setiap data yang baru. KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat (dengan k adalah sebuah angka positif). Pada algoritma K-Nearest Neighbor menggunakan parameter `n-neighbors` dengan nilai k = 10 dan `metric` bawaan yaitu minkowski. [[6]](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html)
    
    ```python
    knn = KNeighborsRegressor(n_neighbors=10)
@@ -276,7 +319,7 @@ models = pd.DataFrame(index = ['train_mse', 'test_mse'],
    
 2. **Algoritma Random Forest**
 
-   Algoritma *random forest* adalah salah satu algoritma *supervised learning* yang digunakan untuk menyelesaikan masalah klasifikasi dan regresi. *Random forest* merupakan salah satu model *machine learning* yang termasuk ke dalam kategori *ensemble* (*group*) *learning*.
+   Algoritma *random forest* adalah salah satu algoritma *supervised learning* yang digunakan untuk menyelesaikan masalah klasifikasi dan regresi. *Random forest* merupakan salah satu model *machine learning* yang termasuk ke dalam kategori *ensemble* (*group*) *learning*. Pada algoritma Random Forest menggunakan parameter `n-estimator` dengan jumlah 50 trees (pohon), `max-depth` dengan nilai kedalaman atau panjang pohon sebesar 12, `random-state` dengan nilai 55, dan `n-jobs` yang bernilai -1 yang berarti pekerjaan dilakukan secara paralel.
    
    ```python
    RF = RandomForestRegressor(n_estimators=50, max_depth=12, random_state=55, n_jobs=-1)
@@ -284,7 +327,7 @@ models = pd.DataFrame(index = ['train_mse', 'test_mse'],
    
 3. **Boosting Algorithm**
 
-   Algoritma ini bertujuan untuk meningkatkan performa atau akurasi prediksi dengan menggabungkan beberapa model sederhana dan dianggap lemah (*weak learners*) sehingga membentuk suatu model yang kuat (*strong ensemble learner*).
+   Algoritma ini bertujuan untuk meningkatkan performa atau akurasi prediksi dengan menggabungkan beberapa model sederhana dan dianggap lemah (*weak learners*) sehingga membentuk suatu model yang kuat (*strong ensemble learner*). Pada algoritma Boosting menggunakan parameter `learning-rate` dengan nilai bobot setiap *regressor* adalah 0.05, dan `random-state` dengan nilai 55.
    
    ```python
    boosting = AdaBoostRegressor(learning_rate=0.05, random_state=55)
@@ -311,7 +354,11 @@ $\hat{Y}_i$ = nilai prediksi
 
 Berdasarkan hasil evaluasi dengan metrik Mean Square Error (MSE) untuk masing-masing model algoritma machine learning terhadap data latih dan data uji, diperoleh nilai evaluasi sebagai berikut.
 
-![evaluation-mse](https://user-images.githubusercontent.com/77439245/194771114-8506e42e-a68d-4489-9dda-5392b8cc5697.png)
+|          | train      | test       |
+|----------|------------|------------|
+| KNN      | 202.514631 | 261.056355 |
+| RF       | 108.567674 | 191.358713 |
+| Boosting | 924.027159 | 918.473432 |
 
 ![evaluation-graph](https://user-images.githubusercontent.com/77439245/194771116-39e81269-f2ab-4cce-814f-fd5c37f850bc.jpg)
 
@@ -322,7 +369,9 @@ Berdasarkan grafik di atas, dapat disimpulkan yaitu:
 
 Kemudian dilakukan pengujian prediksi model menggunakan data uji.
 
-![evaluation-test](https://user-images.githubusercontent.com/77439245/194771122-ba76cd34-4914-40c9-bdb2-c9834d1c81e3.png)
+|      | y_true | prediksi_KNN | prediksi_RF | prediksi_Boosting |
+|------|--------|--------------|-------------|-------------------|
+| 8697 | 706    | 792.1        | 715.7       | 787.4             |
 
 Berdasarkan *output* tabel di atas dapat dilihat bahwa urutan algoritma yang paling mendekati dengan nilai y_true adalah Random Forest. Nilai y_true sebesar 706 dan nilai prediksi Random Forest sebesar 715.7.
 
@@ -334,8 +383,10 @@ Kesimpulan yang diperoleh dari hasil analisis dan pemodelan *machine learning* u
 
 [2] S. Hadijah, "Keuntungan, Fakta, dan Tips Investasi Berlian yang Bisa Didapatkan", *Cermati.com*, 2022, Retrieved from: https://www.cermati.com/artikel/segera-beralih-dari-emas-ini-dia-alasan-kenapa-investasi-berlian-lebih-menguntungkan.
 
-[3] L. Afifah, "Algoritma K-Nearest Neighbor (KNN) untuk Klasifikasi", *IlmudataPy*, Retreived from: [https://ilmudatapy.com/algoritma-k-nearest-neighbor-knn-untuk-klasifikasi](https://ilmudatapy.com/algoritma-k-nearest-neighbor-knn-untuk-klasifikasi).
+[3] L. Afifah, "Algoritma K-Nearest Neighbor (KNN) untuk Klasifikasi", *IlmudataPy*, Retreived from: https://ilmudatapy.com/algoritma-k-nearest-neighbor-knn-untuk-klasifikasi.
 
 [4] Trivusi, "Algoritma Random Forest: Pengertian dan Kegunaannya", *Trivusi*, 2022, Retrieved from: https://www.trivusi.web.id/2022/08/algoritma-random-forest.html.
 
 [5] G. N. Kurniawati, "Algoritma Machine Learning yang Harus Kamu Pelajari di Tahun 2021", *DQLab*, 2021, Retrieved from: https://www.dqlab.id/algoritma-machine-learning-yang-perlu-dipelajari.
+
+[6] scikit-learn, "sklearn.neighbors.KNeighborsRegressor", Retrieved from: https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
